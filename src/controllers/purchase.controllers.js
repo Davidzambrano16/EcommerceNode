@@ -4,18 +4,16 @@ const transporter = require("../utils/mailer");
 const purchase = async (req, res, next) =>{
     try {
         const {userId} = req.params
-        //const {status} = req.body
 
         const data = Number(userId)
 
         const user = await UserServices.getOne(userId)
         const result = await PurchaseServices.createOrder(data)
-        console.log("ESTO ES USER ––>", user);
 
         res.status(201).json(result)
 
         await transporter.sendMail({
-            from: "<candelariacabrera14@gmail.com>",
+            from: "<davidzambrano16@gmail.com>",
             to: result.email,
             subject: 'Bienvenido al Ecommers',
             text: `Welcome ${result.username}`,

@@ -10,9 +10,9 @@ const userRegister = async (req, res, next) => {
     res.status(201).json(result);
 
     await transporter.sendMail({
-      from: "<terepana7@gmail.com>",
+      from: "<davidazp9@gmail.com>",
       to: result.email,
-      subject: "thank you for joining this beautiful family",
+      subject: "thank you for joining",
       text: `Hi ${result.username} enjoy your shopping`,
       html: `<p>Hi<h1>${result.username} </h1>enjoy your shopping</p>`
     });

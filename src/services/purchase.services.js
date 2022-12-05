@@ -19,7 +19,6 @@ class PurchaseServices {
         },
       });
 
-      //console.log("GET CARTDATA", getCartData);
       const productList = getCartData.productInCarts;
 
       const newList = productList.map((product) => {
@@ -34,7 +33,6 @@ class PurchaseServices {
 
       console.log("NEW LIST", newList);
 
-      //const addProducts = newList.map(product => ProductInOrder.create(product))
 
       await forEach(newList, async element => await ProductInOrder.create(element));
 

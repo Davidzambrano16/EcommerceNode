@@ -19,10 +19,7 @@ class CartServices {
             } else {
                 res.status(400).json({error: "product does not exist"})
             }
-
-            //console.log("ESTO ES PRODUCT DATA", productData);
             
-
 
             const add = await ProductInCart.create({
                 cartId: productData.cartId,
